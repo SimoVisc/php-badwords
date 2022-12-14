@@ -1,6 +1,8 @@
 <?php
-// $ = $_GET['']
-$meteo = 'Meteo Cronaca diretta: dalle Piogge ai Nubifragi, forte peggioramento nelle Prossime Ore'
+
+$meteo = 'Meteo Cronaca diretta: dalle Piogge ai Nubifragi, forte peggioramento nelle Prossime Ore';
+$censure_word = $_GET['word'];
+$text_censured = str_replace($censure_word, '***', $meteo)
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +15,7 @@ $meteo = 'Meteo Cronaca diretta: dalle Piogge ai Nubifragi, forte peggioramento 
 </head>
 <body>
     <p><?php echo $meteo ?></p>
-    <p>Lungezza meteo: <?php echo strlen($meteo)?></p>
+    <h3>Lungezza meteo: <?php echo strlen($meteo)?></h3>
+    <p> <?php echo $text_censured; ?></p>
 </body>
 </html>
